@@ -63,7 +63,7 @@ model.add(Dense(5, activation='sigmoid'))
 model.compile(loss='mean_squared_logarithmic_error', optimizer='adam', metrics=['accuracy'])
 weights_file = "crayfish_weights_" + data_type + ".h5" 
 model.load_weights(weights_file)
-model.fit(x_train, y_train, epochs=10, batch_size=1000)
+model.fit(x_train, y_train, epochs=100, batch_size=1000)
 score = model.evaluate(x_test, y_test)
 final_accuracy = str(score[1])
 print("Final accuracy:", final_accuracy)
